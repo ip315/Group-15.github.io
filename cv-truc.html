@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - HỒ VĂN HUY</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+     <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Individual CV CSS - SỬA ĐƯỜNG DẪN -->
+    <link rel="stylesheet" href="./css/cv-truc.css">
+</head>
+<body>
+    <style>
+      /*
+  File: styles.css
+  Mô tả: Style chính cho CV cá nhân - Hồ Văn Huy
+  Các khối style lớn đều có comment giải thích.
+*/
+
+      /* Reset CSS và thiết lập font chữ, màu nền */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Arial", sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+      }
+
+      /* Banner và hiệu ứng fadeIn */
+      .banner {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url("banner-it-blue_060828881.jpg");
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        animation: fadeIn 2s ease-in;
+      }
+
+      /* Navbar cố định trên cùng */
+      .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 1rem 2rem;
+        z-index: 1000;
+        transition: all 0.3s ease;
+      }
+
+      /* Container cho menu và logo */
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #333;
+      }
+
+      /* Menu điều hướng */
+      .nav-menu {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+      }
+      .nav-menu a {
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+        transition: all 0.3s;
+        position: relative;
+      }
+      .nav-menu a:hover {
+        color: #667eea;
+        transform: translateY(-2px);
+      }
+      .nav-menu a::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: #667eea;
+        transition: width 0.3s;
+      }
+      .nav-menu a:hover::after {
+        width: 100%;
+      }
+
+      /* Hero section trong banner */
+      .hero {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        padding-top: 80px;
+      }
+      .hero-content h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+      }
+      .hero-content p {
+        font-size: 1.3rem;
+        margin-bottom: 2rem;
+      }
+
+      /* Nút kêu gọi hành động */
+      .cta-button {
+        display: inline-block;
+        padding: 12px 30px;
+        background: linear-gradient(45deg, #667eea, #764ba2);
+        color: white;
+        text-decoration: none;
+        border-radius: 50px;
+        transition: all 0.3s;
+      }
+      .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Container chính của trang */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+        background: white;
+        border-radius: 20px;
+        margin-top: -100px;
+        position: relative;
+        z-index: 10;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Lưới chia layout chính */
+      .main-grid {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 3rem;
+        margin-top: 2rem;
+      }
+
+      /* Sidebar bên trái */
+      .sidebar {
+        background: #f8f9fa;
+        padding: 2rem;
+        border-radius: 15px;
+        height: fit-content;
+      }
+
+      /* Thông tin cá nhân */
+      .profile-section {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+      .profile-image {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: 0 auto 1rem;
+        background: linear-gradient(45deg, #667eea, #764ba2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 3rem;
+        transition: all 0.3s;
+      }
+      .profile-image img {
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 5px solid #fff;
+        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.13);
+      }
+      .profile-name {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        color: #333;
+      }
+      .profile-title {
+        color: #667eea;
+        font-weight: 500;
+      }
+
+      /* Các section trong sidebar và main content */
+      .section {
+        margin-bottom: 2rem;
+        padding: 1.5rem;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s;
+      }
+      .section-title {
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        color: #333;
+        border-bottom: 2px solid #667eea;
+        padding-bottom: 0.5rem;
+      }
+
+      /* Mục tiêu nghề nghiệp */
+      .career-objective {
+        background: linear-gradient(135deg, #667eea10, #764ba210);
+        padding: 1.5rem;
+        border-radius: 10px;
+        border-left: 4px solid #667eea;
+        margin-bottom: 2rem;
+      }
+
+      /* Kỹ năng và ngôn ngữ */
+      .skill-item,
+      .language-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+        padding: 0.5rem;
+        background: #f8f9fa;
+        border-radius: 5px;
+        transition: all 0.3s;
+      }
+      .skill-bar {
+        width: 100px;
+        height: 8px;
+        background: #e9ecef;
+        border-radius: 4px;
+        overflow: hidden;
+      }
+      .skill-progress {
+        height: 100%;
+        background: linear-gradient(45deg, #667eea, #764ba2);
+        transition: width 1s;
+      }
+
+      /* Dự án */
+      .project-item {
+        background: #f8f9fa;
+        padding: 1.5rem;
+        border-radius: 10px;
+        margin-bottom: 1rem;
+        border-left: 4px solid #667eea;
+        transition: all 0.3s;
+      }
+      .project-title {
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 0.5rem;
+      }
+      .project-tech {
+        color: #667eea;
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+      }
+
+      /* Liên hệ */
+      .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+        background: white;
+        border-radius: 10px;
+        transition: all 0.3s;
+        border: 2px solid transparent;
+      }
+      .contact-icon {
+        width: 40px;
+        height: 40px;
+        background: linear-gradient(45deg, #667eea, #764ba2);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+      }
+      .contact-item a {
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+      }
+
+      /* Responsive cho tablet và mobile */
+      @media (max-width: 900px) {
+        .main-grid {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+      }
+      @media (max-width: 700px) {
+        .container {
+          padding: 1rem;
+        }
+        .profile-image {
+          width: 90px;
+          height: 90px;
+        }
+        .profile-image img {
+          width: 80px;
+          height: 80px;
+        }
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Sở thích */
+      .hobby-item {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        margin-right: 10px;
+        margin-bottom: 7px;
+        background: #e6e7f2;
+        border-radius: 6px;
+        padding: 4px 12px;
+      }
+      .hobby-item i {
+        color: #764ba2;
+      }
+
+      /* Chứng chỉ */
+      .cert-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 8px;
+      }
+      .cert-item:last-child {
+        margin-bottom: 0;
+      }
+
+      /* Keyframes cho hiệu ứng fadeIn */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Page Loader: Hiệu ứng loading khi vào trang -->
+    <div class="page-loader" id="pageLoader">
+      <div class="loader"></div>
+    </div>
+
+    <!-- Navigation: Thanh menu điều hướng -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="logo"><i class="fas fa-user-circle"></i> CV Hồ Văn Huy</div>
+        <ul class="nav-menu">
+          <li><a href="#about">Thông tin</a></li>
+          <li><a href="#career">Mục tiêu</a></li>
+          <li><a href="#hobby">Sở thích</a></li>
+          <li><a href="#skills">Kỹ năng</a></li>
+          <li><a href="#certs">Chứng chỉ</a></li>
+          <li><a href="#projects">Dự án</a></li>
+          <li><a href="#contact">Liên hệ</a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Banner: Ảnh nền và giới thiệu ngắn -->
+    <section class="banner" id="home">
+      <div class="hero">
+        <div class="hero-content">
+          <h1 id="heroFullName">Hồ Văn Huy</h1>
+          <p id="heroTitle">
+            Sinh Viên | Đam mê công nghệ | Sáng tạo & Nhiệt huyết
+          </p>
+          <a href="#about" class="cta-button">
+            <i class="fas fa-arrow-down"></i> Xem chi tiết
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- Main Content: Lưới chia layout chính -->
+    <div class="container" id="about">
+      <div class="main-grid">
+        <!-- Sidebar: Thông tin cá nhân, sở thích, ngôn ngữ -->
+        <aside class="sidebar">
+          <!-- Thông tin cá nhân -->
+          <div class="profile-section">
+            <div
+              class="profile-image"
+              onclick="changeProfileImage()"
+              id="profileImageBox"
+            >
+              <img
+                src="Nhom12pro.img/hovanhuy.jpg"
+                id="profileImg"
+                alt="Avatar"
+              />
+              <input
+                type="file"
+                id="imageInput"
+                accept="image/*"
+                style="display: none"
+                onchange="handleImageUpload(event)"
+              />
+            </div>
+            <h2 class="profile-name" id="profileName">Hồ Văn Huy</h2>
+            <p class="profile-title" id="profileTitle">Sinh Viên</p>
+            <small class="image-hint">Click vào avatar để thay đổi ảnh</small>
+          </div>
+          <div class="section">
+            <h3 class="section-title">
+              <i class="fas fa-info-circle"></i> Thông Tin Cá Nhân
+              <button class="edit-btn" onclick="toggleEditMode()" id="editBtn">
+                <i class="fas fa-edit"></i>
+              </button>
+            </h3>
+            <div class="info-item" id="personalInfo">
+              <!-- Các trường thông tin cá nhân có thể chỉnh sửa -->
+              <div class="info-field">
+                <strong>Họ và tên:</strong>
+                <span class="info-value" id="fullName">Hồ Văn Huy</span>
+                <input
+                  type="text"
+                  class="info-input"
+                  id="fullNameInput"
+                  value="Hồ Văn Huy"
+                  style="display: none"
+                />
+              </div>
+              <div class="info-field">
+                <strong>Ngày sinh:</strong>
+                <span class="info-value" id="birthDate">16/12/2005</span>
+                <input
+                  type="date"
+                  class="info-input"
+                  id="birthDateInput"
+                  value="16/12/2005"
+                  style="display: none"
+                />
+              </div>
+              <div class="info-field">
+                <strong>Giới tính:</strong>
+                <span class="info-value" id="gender">Nam</span>
+                <select
+                  class="info-input"
+                  id="genderInput"
+                  style="display: none"
+                >
+                  <option value="Nam">Nam</option>
+                  <option value="Nữ">Nữ</option>
+                  <option value="Khác">Khác</option>
+                </select>
+              </div>
+              <div class="info-field">
+                <strong>Địa chỉ:</strong>
+                <span class="info-value" id="address"
+                  >17, đường số 9, KDC Cityland Gò Vấp, TP.HCM</span
+                >
+                <input
+                  type="text"
+                  class="info-input"
+                  id="addressInput"
+                  value="17, đường số 9, KDC Cityland Gò Vấp, TP.HCM"
+                  style="display: none"
+                />
+              </div>
+              <div class="info-field">
+                <strong>Email:</strong>
+                <span class="info-value" id="email">huyhv1242@ut.edu.vn</span>
+                <input
+                  type="email"
+                  class="info-input"
+                  id="emailInput"
+                  value="huyhv1242@ut.edu.vn"
+                  style="display: none"
+                />
+              </div>
+              <div class="info-field">
+                <strong>SĐT:</strong>
+                <span class="info-value" id="phone">0815239687</span>
+                <input
+                  type="tel"
+                  class="info-input"
+                  id="phoneInput"
+                  value="0815239687"
+                  style="display: none"
+                />
+              </div>
+              <div class="info-field">
+                <strong>Nghề Nghiệp</strong>
+                <span class="info-value" id="jobTitle">Sinh Viên</span>
+                <input
+                  type="text"
+                  class="info-input"
+                  id="jobTitleInput"
+                  value="Sinh Viên"
+                  style="display: none"
+                />
+              </div>
+            </div>
+            <div class="edit-actions" id="editActions" style="display: none">
+              <button class="save-btn" onclick="saveChanges()">
+                <i class="fas fa-save"></i> Lưu
+              </button>
+              <button class="cancel-btn" onclick="cancelEdit()">
+                <i class="fas fa-times"></i> Hủy
+              </button>
+            </div>
+          </div>
+          <!-- Sở thích -->
+          <div class="section" id="hobby">
+            <h3 class="section-title"><i class="fas fa-heart"></i> Sở Thích</h3>
+            <div class="hobbies">
+              <div class="hobby-item">
+                <i class="fas fa-music"></i> Nghe nhạc
+              </div>
+              <div class="hobby-item">
+                <i class="fas fa-basketball-ball"></i> Bóng rổ
+              </div>
+              <div class="hobby-item">
+                <i class="fas fa-gamepad"></i> Chơi game
+              </div>
+              <div class="hobby-item"><i class="fas fa-plane"></i> Du lịch</div>
+            </div>
+          </div>
+          <!-- Ngôn ngữ -->
+          <div class="section">
+            <h3 class="section-title">
+              <i class="fas fa-language"></i> Ngôn Ngữ
+            </h3>
+            <div class="language-item">
+              <span>Tiếng Việt</span><span><strong>Bản ngữ</strong></span>
+            </div>
+            <div class="language-item">
+              <span>Tiếng Anh</span><span><strong>Trung cấp</strong></span>
+            </div>
+          </div>
+        </aside>
+        <!-- Main Content: Thông tin nghề nghiệp, kỹ năng, dự án, liên hệ -->
+        <main class="content">
+          <!-- Mục tiêu nghề nghiệp -->
+          <div class="career-objective" id="career">
+            <h3 class="section-title">
+              <i class="fas fa-bullseye"></i> Mục Tiêu Nghề Nghiệp
+            </h3>
+            <p>
+              Trở thành một lập trình viên fullstack chuyên nghiệp, làm việc
+              trong môi trường năng động, sáng tạo. Không ngừng học hỏi, cập
+              nhật công nghệ mới để phát triển bản thân và đóng góp vào sự phát
+              triển của công ty.
+            </p>
+          </div>
+          <!-- Kỹ năng -->
+          <div class="section" id="skills">
+            <h3 class="section-title"><i class="fas fa-cogs"></i> Kỹ Năng</h3>
+            <div class="skill-item">
+              <span>HTML/CSS</span>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="55%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span>JavaScript</span>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="45%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span>ReactJS</span>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="70%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span>NodeJS</span>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="60%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span>Teamwork</span>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="50%"></div>
+              </div>
+            </div>
+          </div>
+          <!-- Chứng chỉ - Giải thưởng -->
+          <div class="section" id="certs">
+            <h3 class="section-title">
+              <i class="fas fa-trophy"></i> Chứng Chỉ - Giải Thưởng
+            </h3>
+            <div class="cert-item">
+              <i class="fas fa-certificate"></i>
+              <div>
+                <strong>Chứng chỉ Tin học MOS</strong><br />
+                <small>2024</small>
+              </div>
+            </div>
+            <div class="cert-item">
+              <i class="fas fa-award"></i>
+              <div>
+                <strong>Không có giải thưởng nổi bật</strong>
+              </div>
+            </div>
+          </div>
+          <!-- Dự án -->
+          <div class="section" id="projects">
+            <h3 class="section-title">
+              <i class="fas fa-project-diagram"></i> Dự Án
+            </h3>
+            <div class="project-item">
+              <div class="project-title">Website Quản lý Sinh viên</div>
+              <p>Ứng dụng web giúp quản lý, theo dõi thông tin sinh viên.</p>
+              <div class="project-tech">
+                <i class="fas fa-code"></i> HTML, CSS, JavaScript, NodeJS
+              </div>
+              <div>
+                <strong>Vai trò:</strong> Lập trình giao diện, xử lý logic
+              </div>
+            </div>
+            <div class="project-item">
+              <div class="project-title">Blog cá nhân</div>
+              <p>Blog chia sẻ kiến thức lập trình và cuộc sống.</p>
+              <div class="project-tech">
+                <i class="fas fa-code"></i> ReactJS, Firebase
+              </div>
+              <div><strong>Vai trò:</strong> Lập trình, thiết kế UI/UX</div>
+            </div>
+          </div>
+          <!-- Liên hệ -->
+          <div class="section" id="contact">
+            <h3 class="section-title">
+              <i class="fas fa-envelope"></i> Liên Hệ
+            </h3>
+            <div class="contact-info">
+              <div class="contact-item">
+                <div class="contact-icon"><i class="fab fa-github"></i></div>
+                <div>
+                  <strong>GitHub</strong><br />
+                  <a href="https://github.com/yourgithub" target="_blank"
+                    >github.com/yourgithub</a
+                  >
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon"><i class="fab fa-facebook"></i></div>
+                <div>
+                  <strong>Facebook</strong><br />
+                  <a href="https://facebook.com/yourfacebook" target="_blank"
+                    >facebook.com/yourfacebook</a
+                  >
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon"><i class="fab fa-instagram"></i></div>
+                <div>
+                  <strong>Instagram</strong><br />
+                  <a href="https://instagram.com/yourinstagram" target="_blank"
+                    >@yourinstagram</a
+                  >
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                <div>
+                  <strong>Email</strong><br />
+                  <a href="mailto:nguyenvana@gmail.com">nguyenvana@gmail.com</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <!-- Nhúng file JavaScript chính -->
+    <script>
+      // File: main.js
+      // Mô tả: Xử lý hiệu ứng và chức năng động cho CV cá nhân - Hồ Văn Huy
+      // Các nhóm chức năng đều có comment giải thích.
+
+      // --- Smooth scrolling cho navigation links ---
+      // Khi click vào menu, cuộn mượt tới section tương ứng
+      const smoothScroll = (target) => {
+        const element = document.querySelector(target);
+        window.scrollTo({
+          top: element.offsetTop - 70,
+          behavior: "smooth",
+        });
+      };
+
+      document.querySelectorAll(".nav-menu a").forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          const target = e.target.getAttribute("href");
+          smoothScroll(target);
+        });
+      });
+
+      // --- Navbar scroll effect ---
+      // Thay đổi style navbar khi cuộn trang
+      const navbar = document.querySelector(".navbar");
+      const sticky = navbar.offsetTop;
+
+      const stickyNavbar = () => {
+        if (window.pageYOffset > sticky) {
+          navbar.classList.add("sticky");
+        } else {
+          navbar.classList.remove("sticky");
+        }
+      };
+
+      window.addEventListener("scroll", stickyNavbar);
+
+      // --- Animation on scroll ---
+      // Hiệu ứng xuất hiện cho các section khi cuộn tới
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("fade-in");
+            } else {
+              entry.target.classList.remove("fade-in");
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      document.querySelectorAll(".section").forEach((section) => {
+        observer.observe(section);
+      });
+
+      // --- Page loader ---
+      // Hiệu ứng loading khi vào trang
+      const loader = document.getElementById("pageLoader");
+
+      window.addEventListener("load", () => {
+        loader.style.display = "none";
+      });
+
+      // --- Skill bars animation ---
+      // Hiệu ứng động cho skill bar khi cuộn tới phần kỹ năng
+      const skillBars = document.querySelectorAll(".skill-progress");
+
+      const animateSkillBars = () => {
+        skillBars.forEach((bar) => {
+          const width = bar.getAttribute("data-width");
+          bar.style.width = width;
+        });
+      };
+
+      const skillsSection = document.getElementById("skills");
+      const observerSkills = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              animateSkillBars();
+              observerSkills.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      observerSkills.observe(skillsSection);
+
+      // --- Edit info functions ---
+      // Các hàm chỉnh sửa thông tin cá nhân
+      const toggleEditMode = () => {
+        const infoFields = document.querySelectorAll(".info-field");
+        const infoValues = document.querySelectorAll(".info-value");
+        const infoInputs = document.querySelectorAll(".info-input");
+        const editBtn = document.getElementById("editBtn");
+        const saveBtn = document.querySelector(".save-btn");
+        const cancelBtn = document.querySelector(".cancel-btn");
+        const isEditing = editBtn.classList.toggle("editing");
+
+        infoFields.forEach((field) => {
+          field.classList.toggle("editing", isEditing);
+        });
+
+        infoValues.forEach((value) => {
+          value.style.display = isEditing ? "none" : "inline";
+        });
+
+        infoInputs.forEach((input) => {
+          input.style.display = isEditing ? "inline" : "none";
+        });
+
+        saveBtn.style.display = isEditing ? "inline-block" : "none";
+        cancelBtn.style.display = isEditing ? "inline-block" : "none";
+      };
+
+      const saveChanges = () => {
+        const infoInputs = document.querySelectorAll(".info-input");
+        const infoValues = document.querySelectorAll(".info-value");
+        const editBtn = document.getElementById("editBtn");
+
+        infoInputs.forEach((input) => {
+          const field = input.closest(".info-field");
+          const value = field.querySelector(".info-value");
+          value.textContent = input.value;
+        });
+
+        toggleEditMode();
+      };
+
+      const cancelEdit = () => {
+        toggleEditMode();
+      };
+
+      // --- Profile Image Functions ---
+      // Đổi ảnh đại diện cá nhân
+      const changeProfileImage = () => {
+        const input = document.getElementById("imageInput");
+        input.click();
+      };
+
+      const handleImageUpload = (event) => {
+        const file = event.target.files[0];
+        const reader = new FileReader();
+
+        reader.onload = (e) => {
+          const img = document.getElementById("profileImg");
+          img.src = e.target.result;
+        };
+
+        if (file) {
+          reader.readAsDataURL(file);
+        }
+      };
+
+      // --- Initialize gender select ---
+      // Đặt giá trị mặc định cho select giới tính
+      const genderSelect = document.getElementById("genderInput");
+      const genderValue = document.getElementById("gender").textContent.trim();
+
+      genderSelect.value = genderValue;
+    </script>
+  </body>
+</html>

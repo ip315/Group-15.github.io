@@ -1,0 +1,1425 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - MAI LÊ NHƯ Ý</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    
+    <!-- Individual CV CSS - SỬA ĐƯỜNG DẪN -->
+    <link rel="stylesheet" href="./css/cv-thang.css">
+</head>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Mai Lê Như Ý</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+/* 11. Clean Code và Comment - CSS được tổ chức rõ ràng với comment  */
+
+/* Reset và thiết lập cơ bản */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    padding-top: 76px; /* Để tránh navbar che nội dung */
+    transition: all 0.3s ease;
+}
+
+/* Variables cho Light Mode */
+:root {
+    --primary-color: #a678d6; /* tím pastel */
+    --secondary-color: #6cb4ee; /* xanh dương pastel */
+    --success-color: #9fe6a0; /* xanh lá pastel */
+    --danger-color: #ff9aa2; /* đỏ hồng nhẹ */
+    --warning-color: #ffe28a; /* vàng kem pastel */
+    --info-color: #8bd3dd; /* xanh ngọc pastel */
+    --light-color: #fef6ff;
+    --dark-color: #5a5a5a;
+    --white: #ffffff;
+    --text-primary: #4a4a4a;
+    --text-secondary: #7b7b7b;
+    --bg-primary: #fff9f9;
+    --bg-secondary: #f3efff;
+    --bg-gradient: linear-gradient(135deg, #fbeeff 0%, #e4f0ff 100%);
+    --gradient-primary: linear-gradient(135deg, #d0bfff 0%, #b8e0ff 100%);
+    --gradient-secondary: linear-gradient(135deg, #ffd6e0 0%, #e2f0cb 100%);
+    --shadow-light: 0 2px 10px rgba(173, 164, 255, 0.1);
+    --shadow-medium: 0 4px 20px rgba(173, 164, 255, 0.2);
+    --border-radius: 10px;
+    --transition: all 0.3s ease;
+    --border-color: #e8e8e8;
+}
+
+
+/* Dark Mode Variables */
+[data-theme="dark"] {
+    --primary-color: #c9b6e4;
+    --secondary-color: #89cde8;
+    --success-color: #b4f1b6;
+    --danger-color: #f8b6bd;
+    --warning-color: #fff0a3;
+    --info-color: #b5e7eb;
+    --light-color: #2c2c3a;
+    --dark-color: #f0f0f0;
+    --white: #1c1c2b;
+    --text-primary: #ececec;
+    --text-secondary: #a9b0c0;
+    --bg-primary: #202030;
+    --bg-secondary: #2a2a3a;
+    --bg-gradient: linear-gradient(135deg, #322d47 0%, #3a4f66 100%);
+    --gradient-primary: linear-gradient(135deg, #a678d6 0%, #6cb4ee 100%);
+    --gradient-secondary: linear-gradient(135deg, #ffb7c5 0%, #c4f0c5 100%);
+    --shadow-light: 0 2px 10px rgba(0,0,0,0.3);
+    --shadow-medium: 0 4px 20px rgba(0,0,0,0.5);
+    --border-color: #3c3c4f;
+}
+/* Áp dụng variables vào body */
+body {
+    background: var(--bg-gradient);
+    color: var(--text-primary);
+}
+
+/* 1. Xây dựng phần Banner/Navbar */
+.navbar {
+    background: var(--gradient-primary) !important;
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-medium);
+    transition: var(--transition);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.3rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.nav-link {
+    font-weight: 500;
+    transition: var(--transition);
+    position: relative;
+}
+
+.nav-link:hover {
+    transform: translateY(-2px);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Dark Mode Toggle Button */
+#darkModeToggle {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+#darkModeToggle:hover {
+    transform: rotate(180deg);
+    background-color: rgba(255,255,255,0.2);
+}
+
+/* 2. Xây dựng layout cho web - Sử dụng Flexbox và Grid */
+.main-layout {
+    min-height: 100vh;
+    background: var(--bg-gradient);
+}
+
+.sidebar-section {
+    background: var(--bg-primary);
+    box-shadow: var(--shadow-medium);
+    padding: 0;
+    position: relative;
+}
+
+.main-content {
+    padding: 2rem;
+    background: transparent;
+}
+
+.content-section {
+    background: var(--bg-primary);
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    transition: var(--transition);
+}
+
+.content-section:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+}
+
+.content-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.content-section h2::after {
+    content: '';
+    flex: 1;
+    height: 2px;
+    background: var(--gradient-primary);
+    margin-left: 1rem;
+}
+
+/* 10. Bổ sung ảnh cá nhân */
+.profile-section {
+    padding: 2rem;
+    background: var(--gradient-primary);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.profile-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='m0 40l40-40h-40v40z'/%3E%3C/g%3E%3C/svg%3E");
+    animation: float 20s ease-in-out infinite;
+}
+.profile-section::after {
+    content: "📊";
+    font-size: 200px;
+    position: absolute;
+    right: -20px;
+    bottom: -30px;
+    color: rgba(255, 255, 255, 0.05);
+    z-index: 0;
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    transition: var(--transition);
+    position: relative;
+    z-index: 2;
+}
+
+.profile-img:hover {
+    transform: scale(1.1) rotate(5deg);
+    border-color: white;
+}
+
+.profile-name {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 1rem 0 0.5rem 0;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 2;
+}
+
+.profile-title {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    font-weight: 300;
+    position: relative;
+    z-index: 2;
+}
+
+/* 3. Thông tin cá nhân */
+.personal-info-section {
+    padding: 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.personal-info-section h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid var(--border-color);
+    transition: var(--transition);
+    color: var(--text-primary);
+}
+
+.info-item:hover {
+    background-color: var(--bg-secondary);
+    padding-left: 10px;
+    border-radius: 5px;
+}
+
+.info-item i {
+    width: 20px;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.info-item:last-child {
+    border-bottom: none;
+}
+
+/* 4. Mục tiêu nghề nghiệp */
+.career-objective {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-align: justify;
+    color: var(--text-secondary);
+    background: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--primary-color);
+    position: relative;
+}
+
+.career-objective::before {
+    content: '"';
+    font-size: 4rem;
+    color: var(--primary-color);
+    opacity: 0.3;
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    font-family: Georgia, serif;
+}
+
+/* 5. Sở thích */
+.hobbies-section {
+    padding: 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.hobbies-section h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hobby-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.hobby-tag {
+    background: var(--gradient-secondary);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: var(--transition);
+    cursor: pointer;
+    box-shadow: var(--shadow-light);
+}
+
+.hobby-tag:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-medium);
+}
+
+/* 6. Chứng chỉ - Giải thưởng */
+.certificates-section {
+    padding: 2rem;
+}
+
+.certificates-section h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.certificate-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 1rem;
+    background: var(--bg-secondary);
+    border-radius: var(--border-radius);
+    margin-bottom: 1rem;
+    transition: var(--transition);
+    border-left: 4px solid var(--success-color);
+}
+
+.certificate-item:hover {
+    transform: translateX(10px);
+    box-shadow: var(--shadow-light);
+}
+
+.certificate-item i {
+    font-size: 2rem;
+    color: var(--warning-color);
+}
+
+.certificate-item h5 {
+    margin: 0;
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.certificate-item p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Kỹ năng chuyên môn */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.skill-category {
+    background: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    border-top: 4px solid var(--primary-color);
+}
+
+.skill-category h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.skill-list {
+    list-style: none;
+    padding: 0;
+}
+
+.skill-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid var(--border-color);
+    transition: var(--transition);
+    color: var(--text-primary);
+}
+
+.skill-list li:hover {
+    background-color: var(--bg-primary);
+    padding-left: 10px;
+    border-radius: 5px;
+}
+
+.skill-list li:last-child {
+    border-bottom: none;
+}
+
+.skill-level {
+    background: var(--primary-color);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* Timeline cho kinh nghiệm */
+.experience-timeline {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.experience-timeline::before {
+    content: '';
+    position: absolute;
+    left: 1rem;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--gradient-primary);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+    background: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    transition: var(--transition);
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -2.5rem;
+    top: 1.5rem;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    border: 3px solid var(--bg-primary);
+    box-shadow: var(--shadow-light);
+}
+
+.timeline-item:hover {
+    transform: translateX(10px);
+    box-shadow: var(--shadow-medium);
+}
+
+.timeline-date {
+    background: var(--primary-color);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.timeline-content h4 {
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.timeline-content h5 {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+
+.project-details {
+    background: var(--bg-primary);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    margin-top: 1rem;
+    border-left: 4px solid var(--info-color);
+}
+
+.project-details h6 {
+    color: var(--info-color);
+    margin-bottom: 1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.project-details ul {
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.project-details li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+    color: var(--text-primary);
+}
+
+/* Học vấn */
+.education-item {
+    background: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--success-color);
+}
+
+.education-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.education-header h4 {
+    color: var(--text-primary);
+    margin: 0;
+    font-weight: 600;
+}
+
+.education-period {
+    background: var(--success-color);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.education-item p {
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+/* Contact Form */
+.contact-form-container {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-control {
+    border: 2px solid transparent;
+    border-radius: var(--border-radius);
+    padding: 12px 15px;
+    font-size: 1rem;
+    transition: var(--transition);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    outline: none;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+.form-control::placeholder {
+    color: var(--text-secondary);
+}
+
+.btn-primary {
+    background: var(--gradient-primary);
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: var(--transition);
+    box-shadow: var(--shadow-light);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+}
+
+/* 12. CSS3 nâng cao - Animations và Effects */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(2deg);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 5px var(--primary-color);
+    }
+    50% {
+        box-shadow: 0 0 20px var(--primary-color), 0 0 30px var(--primary-color);
+    }
+    100% {
+        box-shadow: 0 0 5px var(--primary-color);
+    }
+}
+
+/* Áp dụng animations */
+.profile-img {
+    animation: pulse 4s ease-in-out infinite;
+}
+
+.sidebar-section {
+    animation: slideInLeft 0.8s ease-out;
+}
+
+.main-content {
+    animation: slideInRight 0.8s ease-out 0.2s both;
+}
+
+.content-section {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.hobby-tag:hover {
+    animation: glow 1s ease-in-out;
+}
+
+/* CSS3 Advanced Features */
+.profile-section {
+    background: var(--gradient-primary);
+    background-size: 400% 400%;
+    animation: gradientShift 8s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* CSS Grid và Flexbox advanced */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    grid-auto-rows: minmax(200px, auto);
+}
+
+.hobby-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+/* CSS Transform và Transition Effects */
+.info-item {
+    transform-origin: left center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.skill-list li {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.timeline-item {
+    transform-origin: left center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* CSS Filter Effects */
+.profile-img {
+    filter: brightness(1.1) contrast(1.1) saturate(1.2);
+    transition: filter 0.3s ease;
+}
+
+.profile-img:hover {
+    filter: brightness(1.2) contrast(1.2) saturate(1.3) drop-shadow(0 10px 20px rgba(0,0,0,0.3));
+}
+
+/* CSS Backdrop Filter */
+.navbar {
+    backdrop-filter: blur(10px) saturate(180%);
+    -webkit-backdrop-filter: blur(10px) saturate(180%);
+}
+
+/* 13. Ứng dụng responsive - Mobile First Approach */
+/* Mobile First - Base styles cho mobile */
+@media (max-width: 576px) {
+    body {
+        padding-top: 60px;
+    }
+    
+    .navbar-brand {
+        font-size: 1rem;
+    }
+    
+    .main-content {
+        padding: 1rem;
+    }
+    
+    .content-section {
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .content-section h2 {
+        font-size: 1.3rem;
+    }
+    
+    .profile-img {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .profile-name {
+        font-size: 1.5rem;
+    }
+    
+    .profile-title {
+        font-size: 1rem;
+    }
+    
+    .personal-info-section,
+    .hobbies-section,
+    .certificates-section {
+        padding: 1.5rem;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .skill-category {
+        padding: 1rem;
+    }
+    
+    .timeline-item {
+        padding: 1rem;
+    }
+    
+    .education-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .contact-form-container {
+        padding: 1.5rem;
+    }
+    
+    .hobby-tags {
+        justify-content: center;
+    }
+    
+    .info-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        text-align: center;
+    }
+}
+
+/* Tablet */
+@media (min-width: 577px) and (max-width: 768px) {
+    .main-content {
+        padding: 1.5rem;
+    }
+    
+    .content-section {
+        padding: 1.8rem;
+    }
+    
+    .profile-img {
+        width: 130px;
+        height: 130px;
+    }
+    
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop Medium */
+@media (min-width: 769px) and (max-width: 992px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .timeline-item {
+        padding: 1.8rem;
+    }
+}
+
+/* Desktop Large */
+@media (min-width: 993px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .main-content {
+        padding: 2.5rem;
+    }
+    
+    .content-section {
+        padding: 2.5rem;
+    }
+}
+
+/* Extra Large Desktop */
+@media (min-width: 1200px) {
+    .container-fluid {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+    
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+    }
+}
+
+/* Landscape Mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+    .profile-section {
+        padding: 1rem;
+    }
+    
+    .profile-img {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .sidebar-section {
+        max-height: 100vh;
+        overflow-y: auto;
+    }
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .profile-img {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: optimize-contrast;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    :root {
+        --primary-color: #000000;
+        --secondary-color: #666666;
+        --white: #ffffff;
+        --light-color: #f0f0f0;
+    }
+    
+    .content-section {
+        border: 2px solid #000000;
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background: white !important;
+        color: black !important;
+        font-size: 12pt;
+        line-height: 1.4;
+    }
+    
+    .navbar {
+        display: none !important;
+    }
+    
+    .main-layout {
+        background: white !important;
+    }
+    
+    .sidebar-section,
+    .main-content {
+        box-shadow: none !important;
+    }
+    
+    .content-section {
+        page-break-inside: avoid;
+        box-shadow: none !important;
+        border: 1px solid #cccccc;
+    }
+    
+    .profile-section {
+        background: #f8f9fa !important;
+        color: black !important;
+    }
+    
+    .timeline-item,
+    .education-item,
+    .skill-category {
+        page-break-inside: avoid;
+    }
+    
+    /* Đảm bảo màu sắc hiển thị khi in */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        color-adjust: exact !important;
+    }
+}
+
+/* Accessibility Improvements */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Focus States */
+.nav-link:focus,
+.btn:focus,
+.form-control:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--dark-color);
+}
+
+</style>
+</head>
+<body>
+    <!-- 1. Xây dựng phần Banner/Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <i class="fas fa-user-circle"></i> Mai Lê Như Ý - Sinh viên Khoa học dữ liệu
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Giới thiệu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Kỹ năng</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experience">Kinh nghiệm</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Liên hệ</a>
+                    </li>
+            
+                    <li class="nav-item">
+                        <button class="btn btn-outline-light ms-2" id="darkModeToggle" type="button" title="Chuyển đổi sáng/tối" aria-label="Chuyển đổi chế độ sáng tối">
+                            <i class="fas fa-moon" id="darkModeIcon" aria-hidden="true"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 2. Xây dựng layout cho web với flexbox/grid -->
+    <div class="container-fluid main-layout" id="main-content">
+        <div class="row min-vh-100">
+            <!-- Sidebar với thông tin cá nhân -->
+            <div class="col-lg-4 col-md-5 sidebar-section">
+                <!-- 10. Bổ sung ảnh cá nhân -->
+                <div class="profile-section text-center">
+                    <img src="Nhom12pro.img/mailenhuy.jpg" alt="Mai Lê Như Ý" class="profile-img" loading="lazy">
+                    <h2 class="profile-name">Mai Lê Như Ý</h2>
+                    <p class="profile-title">Sinh viên Khoa học dữ liệu</p>
+                </div>
+
+                <!-- 3. Thông tin cá nhân -->
+                <div class="personal-info-section">
+                    <h3><i class="fas fa-user" aria-hidden="true"></i> Thông tin cá nhân</h3>
+                    <div class="info-item">
+                        <i class="fas fa-birthday-cake" aria-hidden="true"></i>
+                        <span>Ngày sinh: 31/10/2005</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone" aria-hidden="true"></i>
+                        <span>0329222553</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                        <a href="mailto:mailenhuye1210@gmail.com" style="color: inherit; text-decoration: none;">mailenhuye1210@gmail.com</a>
+                    </div>
+                    <div class="info-item">
+                        <i class="fab fa-github" aria-hidden="true"></i>
+                        <a href="https://github.com/Nhuyyyy3110" target="_blank" style="color: inherit; text-decoration: none;">github</a>
+                    </div>
+                    <div class="info-item">
+                        <i class="fab fa-facebook" aria-hidden="true"></i>
+                        <a href="https://www.facebook.com/nhu.yy.997598" target="_blank" style="color: inherit; text-decoration: none;">facebook</a>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                        <a href="https://www.google.com/maps/place/Quận+Bình+Thạnh,+TP.HCM" target="_blank" style="color: inherit; text-decoration: none;">
+                            Quận Bình Thạnh, TP.HCM
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 5. Sở thích -->
+                <div class="hobbies-section">
+                    <h3><i class="fa-solid fa-heart" aria-hidden="true"></i> Sở thích</h3>
+                    <div class="hobby-list">
+                        <div>📚 Đọc sách</div>
+                        <div>🎵 Nghe nhạc</div>
+                        <div>🌍 Du lịch</div>
+                        <div>🧠 Khám phá công nghệ</div>
+                    </div>
+                </div>
+
+                <!-- 6. Chứng chỉ - Giải thưởng -->
+                <div class="certificates-section">
+                    <h3><i class="fa-solid fa-award" aria-hidden="true"></i> Chứng chỉ & Giải thưởng</h3>
+                    <div class="certificate-item">
+                        <i class="fas fa-trophy" aria-hidden="true"></i>
+                        <div>
+                            <h5>Sinh viên giỏi</h5>
+                            <p>Năm 1 & 2</p>
+                        </div>
+                    </div>
+                    <div class="certificate-item">
+                        <i class="fas fa-medal" aria-hidden="true"></i>
+                        <div>
+                            <h5>Dự án tốt nghiệp</h5>
+                            <p>Điểm A cho dự án Booking System</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main content area -->
+            <div class="col-lg-8 col-md-7 main-content">
+                <section id="about" class="content-section">
+                    <h2><i class="fas fa-bullseye" aria-hidden="true"></i> Mục tiêu nghề nghiệp</h2>
+                    <p class="career-objective">
+                        Tôi mong muốn phát triển kỹ năng phân tích dữ liệu và ứng dụng kiến thức học thuật vào thực tế. 
+                        Hướng tới vai trò chuyên viên phân tích dữ liệu, tôi mong muốn tham gia các dự án công nghệ và 
+                        đóng góp giải pháp dựa trên dữ liệu cho các vấn đề thực tiễn.
+                    </p>
+                </section>
+
+                </section>
+                <section id="skills" class="content-section">
+                    <h2><i class="fas fa-code" aria-hidden="true"></i> Kỹ năng chuyên môn</h2>
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="card h-100 shadow-sm">
+                                <div class="card-body">
+                                    <h4 class="card-title">Phân tích & Xử lý dữ liệu</h4>
+                                    <ul class="list-unstyled mb-0">
+                                        <li>Python <span class="badge bg-primary ms-2">80%</span></li>
+                                        <li>SQL <span class="badge bg-primary ms-2">75%</span></li>
+                                        <li>Pandas / Numpy <span class="badge bg-primary ms-2">70%</span></li>
+                                        <li>Excel / Google Sheets <span class="badge bg-primary ms-2">85%</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="card h-100 shadow-sm">
+                                <div class="card-body">
+                                    <h4 class="card-title">Trực quan hóa dữ liệu</h4>
+                                    <ul class="list-unstyled mb-0">
+                                        <li>Matplotlib / Seaborn <span class="badge bg-success ms-2">70%</span></li>
+                                        <li>Power BI / Tableau <span class="badge bg-success ms-2">65%</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="card h-100 shadow-sm">
+                                <div class="card-body">
+                                    <h4 class="card-title">Kỹ năng mềm</h4>
+                                    <ul class="list-unstyled mb-0">
+                                        <li>Làm việc nhóm <span class="badge bg-info ms-2">90%</span></li>
+                                        <li>Giao tiếp <span class="badge bg-info ms-2">85%</span></li>
+                                        <li>Giải quyết vấn đề <span class="badge bg-info ms-2">80%</span></li>
+                                        <li>Quản lý thời gian <span class="badge bg-info ms-2">80%</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="card h-100 shadow-sm">
+                                <div class="card-body">
+                                    <h4 class="card-title">Ngoại ngữ & Tin học</h4>
+                                    <ul class="list-unstyled mb-0">
+                                        <li>Tiếng Anh (cơ bản) <span class="badge bg-warning text-dark ms-2">60%</span></li>
+                                        <li>Tin học văn phòng <span class="badge bg-warning text-dark ms-2">85%</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="experience" class="content-section">
+                    <h2>
+                        <i class="fas fa-briefcase" aria-hidden="true"></i>
+                        Kinh nghiệm & Dự án
+                    </h2>
+                    <div class="experience-timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-date">2023 - Hiện tại</div>
+                            <div class="timeline-content">
+                                <h4>Sinh viên - Đại học Giao thông Vận tải TP.HCM</h4>
+                                <h5>Chuyên ngành: Khoa học dữ liệu</h5>
+                                <div class="project-details">
+                                    <h6>
+                                        <i class="fas fa-project-diagram" aria-hidden="true"></i>
+                                        Một số dự án tiêu biểu
+                                    </h6>
+                                    <ul>
+                                        <li>
+                                            <strong>Phân tích dữ liệu khách hàng:</strong>
+                                            Dùng Python và SQL để khám phá thông tin ẩn trong dữ liệu.
+                                        </li>
+                                        <li>
+                                            <strong>Ứng dụng chăm sóc thú cưng:</strong>
+                                            Xây dựng web bằng Django, triển khai bằng Docker.
+                                        </li>
+                                        <li>
+                                            <strong>Làm sạch dữ liệu:</strong>
+                                            Thực hiện trong nhóm 4 người, xử lý dữ liệu thô và chuẩn hóa định dạng.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Học vấn -->
+                <section class="content-section">
+                    <h2><i class="fas fa-graduation-cap" aria-hidden="true"></i> Học vấn</h2>
+                    <div class="education-item">
+                        <div class="education-header">
+                            <h4>Cử nhân Khoa Học Dữ </h4>
+                            <span class="education-period">2023 - 2027</span>
+                        </div>
+                        <p><strong>Trường:</strong> Đại học Giao thông Vận tải TP. Hồ Chí Minh</p>
+                        <p><strong>Chuyên ngành:</strong> Khoa Học Dữ Liệu</p>
+                        <p><strong>Tình trạng:</strong> Sinh viên năm 2</p>
+                    </div>
+                </section>
+                <section id="contact" class="content-section">
+                    <h2><i class="fas fa-envelope" aria-hidden="true"></i> Liên hệ</h2>
+                    <div class="contact-form-container">
+                        <form class="contact-form" novalidate>
+                            <div class="form-group">
+                                <label for="contactName" class="sr-only">Họ và tên</label>
+                                <input type="text" class="form-control" id="contactName" placeholder="Họ và tên" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactEmail" class="sr-only">Email</label>
+                                <input type="email" class="form-control" id="contactEmail" placeholder="Email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactSubject" class="sr-only">Chủ đề</label>
+                                <input type="text" class="form-control" id="contactSubject" placeholder="Chủ đề">
+                            </div>
+                            <div class="form-group">
+                                <label for="contactMessage" class="sr-only">Tin nhắn</label>
+                                <textarea class="form-control" id="contactMessage" rows="4" placeholder="Tin nhắn" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane" aria-hidden="true"></i> Gửi tin nhắn
+                            </button>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🚀 CV Website đã tải thành công!');
+            
+            const darkModeToggle = document.getElementById('darkModeToggle');
+            const darkModeIcon = document.getElementById('darkModeIcon');
+            
+            if (!darkModeToggle || !darkModeIcon) {
+                console.error('❌ Không tìm thấy Dark Mode elements!');
+                return;
+            }
+            
+            console.log('✅ Tìm thấy Dark Mode elements');
+        
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            setTheme(savedTheme);
+            
+            darkModeToggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                const currentTheme = document.body.getAttribute('data-theme') || 'light';
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                setTheme(newTheme);
+                
+                // Animation
+                this.style.transform = 'rotate(180deg)';
+                setTimeout(() => this.style.transform = '', 300);
+                
+                console.log(`🌙 Chuyển sang ${newTheme}`);
+            });
+            
+            function setTheme(theme) {
+                document.body.setAttribute('data-theme', theme);
+                localStorage.setItem('theme', theme);
+                
+                if (theme === 'dark') {
+                    darkModeIcon.className = 'fas fa-sun';
+                    darkModeToggle.title = 'Chuyển sang chế độ sáng';
+                } else {
+                    darkModeIcon.className = 'fas fa-moon';
+                    darkModeToggle.title = 'Chuyển sang chế độ tối';
+                }
+            }
+        });
+    </script>
+    <script>
+
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('CV Website đã tải thành công!');
+    initializeAllFeatures();
+});
+
+// Khởi tạo tất cả các tính năng
+function initializeAllFeatures() {
+    try {
+        initDarkModeToggle();
+        initSmoothScrolling();
+        initNavbarEffects();
+        initScrollAnimations();
+        initHoverEffects();
+        initContactForm();
+        initInteractiveElements();
+        initResponsiveFeatures();
+        initAccessibilityFeatures();
+        console.log('Tất cả tính năng đã được khởi tạo');
+    } catch (error) {
+        console.error('Lỗi khởi tạo:', error);
+    }
+}
+
+// Console log với thông tin website
+console.log(`
+🎨 ===================================
+   CV WEBSITE - MAI LÊ NHƯ Ý
+   Sinh viên Khoa học Dữ liệu
+===================================
+🚀 Website Features:
+   ✅ Responsive Design
+   ✅ Smooth Animations  
+   ✅ Interactive Elements
+   ✅ Form Validation
+   ✅ Accessibility Support
+   ✅ Performance Optimized
+   🌙 Dark/Light Mode Toggle
+   ⌨️  Keyboard Shortcuts (Ctrl+D)
+   🛡️  Error Handling
+
+📱 Contact: mailenhuye1210@gmail.com
+🌐 Theme: Auto-detect system preference
+===================================
+`);
+
+console.log(' All features initialized successfully including Dark Mode!');
+</script>
+</body>
+</html>

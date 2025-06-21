@@ -1,0 +1,969 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital CV - Nguyen Ngoc Tai</title>
+    <!-- Liên kết Font Awesome cho các icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Liên kết Google Fonts - Poppins -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <!-- Individual CV CSS - SỬA ĐƯỜNG DẪN -->
+    <link rel="stylesheet" href="./css/cv-duy.css">
+  <style>
+    :root {
+      --primary-color: #2563eb;       
+      --primary-dark: #1d4ed8;
+      --secondary-color: #7c3aed;    
+      --accent-color: #10b981;       
+      --text-color: #1f2937;         
+      --text-light: #6b7280;        
+      --bg-light: #f9fafb;           
+      --bg-dark: #111827;            
+      --sidebar-bg: linear-gradient(135deg, #1e3a8a, #1e40af);
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', 'Open Sans', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-color);
+      line-height: 1.6;
+      animation: fadeIn 1s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .cv-container {
+      display: flex;
+      max-width: 1100px;
+      margin: 30px auto;
+      background-color: white;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .sidebar {
+      width: 30%;
+      background: var(--sidebar-bg);
+      color: white;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .sidebar h2 {
+      color: white;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+      padding-bottom: 8px;
+      margin: 25px 0 15px;
+      font-size: 1.1em;
+      width: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    .icon-title {
+      margin-right: 10px;
+      color: var(--accent-color);
+    }
+
+    .profile-img-container {
+      position: relative;
+      width: 150px;
+      height: 150px;
+      margin-bottom: 25px;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .profile-img-container:hover {
+      transform: scale(1.05);
+    }
+
+    .profile-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: all 0.5s ease;
+    }
+
+    .img-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(37, 99, 235, 0.1);
+      z-index: 1;
+    }
+
+    .sidebar p, .sidebar li {
+      font-size: 0.9em;
+      margin: 8px 0;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .sidebar ul {
+      padding-left: 20px;
+      width: 100%;
+    }
+
+    .sidebar li {
+      margin-bottom: 10px;
+    }
+
+    .main-content {
+      width: 70%;
+      padding: 40px;
+      background-color: white;
+    }
+
+    .main-header {
+      text-align: center;
+      margin-bottom: 30px;
+      position: relative;
+    }
+
+    .main-header h1 {
+      font-size: 2.2rem;
+      color: var(--primary-color);
+      margin-bottom: 5px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      color: var(--text-light);
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+
+    .header-decoration {
+      width: 80px;
+      height: 4px;
+      background: var(--primary-color);
+      margin: 0 auto;
+      border-radius: 2px;
+    }
+
+    section {
+      margin-bottom: 30px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
+    }
+
+    section.animate-section {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    section h2 {
+      color: var(--primary-color);
+      margin-bottom: 15px;
+      font-size: 1.3em;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      padding-left: 15px;
+      border-left: 4px solid var(--primary-color);
+    }
+
+    .skill-name {
+      display: inline-block;
+      width: 120px;
+      font-size: 0.9em;
+    }
+
+    .skill-bar {
+      display: inline-block;
+      width: calc(100% - 130px);
+      height: 8px;
+      background: #e5e7eb;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .skill-level {
+      height: 100%;
+      background: var(--primary-color);
+      border-radius: 4px;
+      transition: width 1s ease;
+    }
+
+    .goals-container {
+      display: flex;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .goal-card {
+      flex: 1;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .goal-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .goal-card h3 {
+      color: var(--primary-color);
+      margin-top: 0;
+      font-size: 1.1em;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .short-term {
+      border-top: 3px solid var(--accent-color);
+    }
+
+    .long-term {
+      border-top: 3px solid var(--secondary-color);
+    }
+
+    .project {
+      margin-bottom: 25px;
+      padding-bottom: 20px;
+      border-bottom: 1px dashed #e5e7eb;
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .project-header h3 {
+      margin: 0;
+      font-size: 1.1em;
+      color: var(--text-color);
+    }
+
+    .project-header span {
+      font-size: 0.85em;
+      color: var(--text-light);
+    }
+
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 15px;
+    }
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .social-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .social-icon::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+      transform: translateX(-100%);
+      transition: transform 0.6s ease;
+    }
+
+    .social-icon:hover::before {
+      transform: translateX(100%);
+    }
+
+    .social-icon i {
+      position: relative;
+      z-index: 1;
+      transition: transform 0.3s ease;
+    }
+
+    .social-icon:hover i {
+      transform: scale(1.2);
+    }
+
+    /* Màu sắc riêng cho từng nút */
+    .fb {
+      background-color: #3b5998;
+    }
+
+    .fb:hover {
+      background-color: #2d4373;
+    }
+
+    .insta {
+      background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+    }
+
+    .insta:hover {
+      background: linear-gradient(45deg, #fd1d1d, #e1306c, #c13584, #833ab4, #5851db, #405de6);
+    }
+
+    .git {
+      background-color: #333;
+    }
+
+    .git:hover {
+      background-color: #222;
+    }
+
+    /* Edit Profile Button */
+    .edit-profile-container {
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .edit-btn {
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 0.9em;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 auto;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .edit-btn:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      animation: fadeIn 0.3s;
+    }
+
+    .modal-content {
+      background-color: white;
+      margin: 5% auto;
+      padding: 30px;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 700px;
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+      position: relative;
+      animation: slideDown 0.4s;
+    }
+
+    @keyframes slideDown {
+      from {
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .close {
+      position: absolute;
+      right: 25px;
+      top: 15px;
+      color: #aaa;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    .close:hover {
+      color: var(--primary-color);
+    }
+
+    .modal h2 {
+      color: var(--primary-color);
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Form Styles */
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: var(--text-color);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-family: 'Open Sans', sans-serif;
+      transition: border 0.3s, box-shadow 0.3s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--primary-color);
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .form-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .btn {
+      padding: 12px 25px;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: none;
+    }
+
+    .btn-save {
+      background-color: var(--primary-color);
+      color: white;
+    }
+
+    .btn-save:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-cancel {
+      background-color: #f3f4f6;
+      color: var(--text-color);
+    }
+
+    .btn-cancel:hover {
+      background-color: #e5e7eb;
+    }
+
+    .notification {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: var(--primary-color);
+      color: white;
+      padding: 15px 25px;
+      border-radius: 5px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      z-index: 1001;
+      opacity: 0;
+      transform: translateY(-20px);
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="cv-container">
+    <aside class="sidebar">
+      <div class="profile-img-container">
+        <img src="Nhom12pro.img/nguyen ngoc tai.jpg" alt="Ảnh cá nhân" class="profile-img">
+        <div class="img-overlay"></div>
+      </div>
+      <section class="contact">
+        <h2><i class="fas fa-id-card icon-title"></i> LIÊN HỆ</h2>
+        <p><i class="fas fa-phone-alt"></i> 0983.544.257</p>
+        <p><i class="fas fa-envelope"></i> nngoctai897@gmail.com</p>
+        <p><i class="fas fa-map-marker-alt"></i> Gò Vấp, TP.HCM</p>
+        <p><i class="fas fa-birthday-cake"></i> 26/07/2005</p>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/nguyen.ngoc.tai.572770" target="_blank" class="social-icon fb">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://www.instagram.com/n_ntuoi/" target="_blank" class="social-icon insta">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://github.com/ip315" target="_blank" class="social-icon git">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+      </section>
+
+      <section class="education">
+        <h2><i class="fas fa-graduation-cap icon-title"></i> HỌC VẤN</h2>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <p><strong>2023 - 2027</strong></p>
+            <p>ĐH Giao Thông Vận Tải TP.HCM</p>
+            <p>Ngành: Công nghệ Thông tin</p>
+            <p>GPA: <strong>3.4 / 4.0</strong></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="skills">
+        <h2><i class="fas fa-tools icon-title"></i> KỸ NĂNG</h2>
+        <h4>Kỹ năng mềm</h4>
+        <ul>
+          <li>
+            <span class="skill-name">Giao tiếp</span>
+            <div class="skill-bar">
+              <div class="skill-level" style="width: 85%"></div>
+            </div>
+          </li>
+          <li>
+            <span class="skill-name">Làm việc nhóm</span>
+            <div class="skill-bar">
+              <div class="skill-level" style="width: 90%"></div>
+            </div>
+          </li>
+          <li>
+            <span class="skill-name">Tư duy sáng tạo</span>
+            <div class="skill-bar">
+              <div class="skill-level" style="width: 80%"></div>
+            </div>
+          </li>
+        </ul>
+        <h4>Kỹ năng chuyên ngành</h4>
+        <ul>
+          <li>
+            <span class="skill-name">HTML/CSS/JS/C++</span>
+            <div class="skill-bar">
+              <div class="skill-level" style="width: 85%"></div>
+            </div>
+          </li>
+          <li>
+            <span class="skill-name">ReactJS</span>
+            <div class="skill-bar">
+              <div class="skill-level" style="width: 70%"></div>
+            </div>
+          </li>
+          <li>
+            <span class="skill-name">MySQL</span>
+            <div class="skill-bar">
+              <div class="skill-level" style="width: 65%"></div>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="interests">
+        <h2><i class="fas fa-heart icon-title"></i> SỞ THÍCH</h2>
+        <div class="interests-container">
+          <div class="interest-item">
+            <i class="fas fa-headphones"></i>
+            <span>Nghe nhạc</span>
+          </div>
+          <div class="interest-item">
+            <i class="fas fa-book"></i>
+            <span>Đọc sách</span>
+          </div>
+          <div class="interest-item">
+            <i class="fas fa-laptop-code"></i>
+            <span>Công nghệ</span>
+          </div>
+        </div>
+      </section>
+    </aside>
+
+    <main class="main-content">
+      <header class="main-header">
+        <h1>NGUYỄN NGỌC TÀI</h1>
+        <p class="subtitle">SINH VIÊN CÔNG NGHỆ THÔNG TIN NĂM 2</p>
+        <div class="header-decoration"></div>
+        
+        <div class="edit-profile-container">
+          <button id="editProfileBtn" class="edit-btn">
+            <i class="fas fa-edit"></i> Chỉnh sửa thông tin
+          </button>
+          
+          <!-- Modal chỉnh sửa -->
+          <div id="editModal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <h2><i class="fas fa-user-edit"></i> Chỉnh sửa thông tin cá nhân</h2>
+              
+              <form id="profileForm">
+                <div class="form-group">
+                  <label for="editName"><i class="fas fa-signature"></i> Họ và tên</label>
+                  <input type="text" id="editName" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                  <label for="editTitle"><i class="fas fa-briefcase"></i> Chức danh</label>
+                  <input type="text" id="editTitle" name="title" required>
+                </div>
+                
+                <div class="form-group">
+                  <label for="editPhone"><i class="fas fa-phone"></i> Số điện thoại</label>
+                  <input type="tel" id="editPhone" name="phone" required>
+                </div>
+                
+                <div class="form-group">
+                  <label for="editEmail"><i class="fas fa-envelope"></i> Email</label>
+                  <input type="email" id="editEmail" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                  <label for="editAddress"><i class="fas fa-map-marker-alt"></i> Địa chỉ</label>
+                  <input type="text" id="editAddress" name="address" required>
+                </div>
+                
+                <div class="form-group">
+                  <label for="editBirthday"><i class="fas fa-birthday-cake"></i> Ngày sinh</label>
+                  <input type="date" id="editBirthday" name="birthday" required>
+                </div>
+                
+                <div class="form-group">
+                  <label for="editIntro"><i class="fas fa-comment"></i> Giới thiệu</label>
+                  <textarea id="editIntro" name="intro" rows="4" required></textarea>
+                </div>
+                
+                <div class="form-actions">
+                  <button type="button" id="cancelBtn" class="btn btn-cancel">Hủy bỏ</button>
+                  <button type="submit" class="btn btn-save">Lưu thay đổi</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="profile">
+        <h2><i class="fas fa-user-tie icon-title"></i> GIỚI THIỆU</h2>
+        <p>Là sinh viên năm 2 tại ĐH Giao Thông Vận Tải TP.HCM với niềm đam mê lập trình và thiết kế web hiện đại. Tôi luôn khao khát phát triển bản thân không chỉ ở khía cạnh kỹ thuật mà còn trong giao tiếp và tư duy hệ thống. Tôi đang hướng đến việc trở thành lập trình viên frontend chuyên nghiệp, có khả năng tạo ra sản phẩm thân thiện và hiệu quả với người dùng.</p>
+      </section>
+
+      <section class="career-goal">
+        <h2><i class="fas fa-bullseye icon-title"></i> MỤC TIÊU NGHỀ NGHIỆP</h2>
+        <div class="goals-container">
+          <div class="goal-card short-term">
+            <h3>Mục tiêu ngắn hạn</h3>
+            <ul>
+              <li>Củng cố kiến thức nền tảng ngành CNTT</li>
+              <li>Thực hành các dự án thực tế</li>
+              <li>Làm chủ công nghệ frontend</li>
+            </ul>
+          </div>
+          <div class="goal-card long-term">
+            <h3>Mục tiêu dài hạn</h3>
+            <ul>
+              <li>Trở thành Full-stack developer chuyên nghiệp</li>
+              <li>Làm việc tại công ty công nghệ lớn hàng đầu</li>
+              <li>Phát triển các sản phẩm có ảnh hưởng tích cực</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="awards animate-title">
+        <h2><i class="fas fa-award icon-title"></i> CHỨNG CHỈ - GIẢI THƯỞNG</h2>
+        <ul>
+          <li>Không có chứng chỉ hay bất kỳ giải thưởng nào </li>
+        </ul>
+      </section>
+      <section class="experience">
+        <h2><i class="fas fa-laptop-code icon-title"></i> DỰ ÁN CÁ NHÂN</h2>
+        <div class="project">
+          <div class="project-header">
+            <h3>🌐 Portfolio Website</h3>
+            <span>2024</span>
+          </div>
+          <div class="project-content">
+            <ul>
+              <li>Thiết kế UI/UX và lập trình frontend bằng HTML, CSS, JS.</li>
+              <li>Áp dụng hiệu ứng animation và transform để tăng trải nghiệm người dùng.</li>
+            </ul>
+            <div class="tech-tags">
+              <span class="tech-tag">HTML5</span>
+              <span class="tech-tag">CSS3</span>
+              <span class="tech-tag">JavaScript</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="project-header">
+            <h3>📝 To-do List App</h3>
+            <span>2024</span>
+          </div>
+          <div class="project-content">
+            <ul>
+              <li>Ứng dụng giúp quản lý công việc hằng ngày, lưu bằng localStorage.</li>
+              <li>Thiết kế đơn giản, dễ sử dụng, có phân loại và tìm kiếm.</li>
+            </ul>
+            <div class="tech-tags">
+              <span class="tech-tag">ReactJS</span>
+              <span class="tech-tag">LocalStorage</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <p>&copy; 2025 Nguyễn Ngọc Tài — Thiết kế bởi chính tôi ❤️</p>
+      </footer>
+    </main>
+  </div>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Lấy các phần tử DOM
+      const editBtn = document.getElementById('editProfileBtn');
+      const modal = document.getElementById('editModal');
+      const closeBtn = document.querySelector('.close');
+      const cancelBtn = document.getElementById('cancelBtn');
+      const profileForm = document.getElementById('profileForm');
+      
+      // Lấy thông tin hiện tại từ CV
+      const currentName = document.querySelector('.main-header h1').textContent;
+      const currentTitle = document.querySelector('.subtitle').textContent;
+      const currentPhone = document.querySelector('.contact p:nth-child(2)').textContent.replace(' ', '').replace(' ', '');
+      const currentEmail = document.querySelector('.contact p:nth-child(3)').textContent;
+      const currentAddress = document.querySelector('.contact p:nth-child(4)').textContent;
+      const currentBirthday = document.querySelector('.contact p:nth-child(5)').textContent;
+      const currentIntro = document.querySelector('.profile p').textContent;
+      
+      // Mở modal khi click nút chỉnh sửa
+      editBtn.addEventListener('click', function() {
+        // Điền thông tin hiện tại vào form
+        document.getElementById('editName').value = currentName;
+        document.getElementById('editTitle').value = currentTitle;
+        document.getElementById('editPhone').value = currentPhone.split(':')[1].trim();
+        document.getElementById('editEmail').value = currentEmail.split(':')[1].trim();
+        document.getElementById('editAddress').value = currentAddress.split(':')[1].trim();
+        document.getElementById('editBirthday').value = formatDateForInput(currentBirthday.split(':')[1].trim());
+        document.getElementById('editIntro').value = currentIntro;
+        
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden'; // Ngăn scroll khi modal mở
+      });
+      
+      // Đóng modal khi click nút đóng
+      closeBtn.addEventListener('click', closeModal);
+      cancelBtn.addEventListener('click', closeModal);
+      
+      // Đóng modal khi click bên ngoài
+      window.addEventListener('click', function(event) {
+        if (event.target === modal) {
+          closeModal();
+        }
+      });
+      
+      // Xử lý khi submit form
+      profileForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Lấy giá trị từ form
+        const newName = document.getElementById('editName').value;
+        const newTitle = document.getElementById('editTitle').value;
+        const newPhone = document.getElementById('editPhone').value;
+        const newEmail = document.getElementById('editEmail').value;
+        const newAddress = document.getElementById('editAddress').value;
+        const newBirthday = document.getElementById('editBirthday').value;
+        const newIntro = document.getElementById('editIntro').value;
+        
+        // Cập nhật thông tin trên CV
+        document.querySelector('.main-header h1').textContent = newName;
+        document.querySelector('.subtitle').textContent = newTitle;
+        document.querySelector('.contact p:nth-child(2)').textContent = `☎️ ${formatPhoneNumber(newPhone)}`;
+        document.querySelector('.contact p:nth-child(3)').textContent = `✉️ ${newEmail}`;
+        document.querySelector('.contact p:nth-child(4)').textContent = `🏠 ${newAddress}`;
+        document.querySelector('.contact p:nth-child(5)').textContent = `🎂 ${formatDateForDisplay(newBirthday)}`;
+        document.querySelector('.profile p').textContent = newIntro;
+        
+        // Lưu vào localStorage
+        saveToLocalStorage({
+          name: newName,
+          title: newTitle,
+          phone: newPhone,
+          email: newEmail,
+          address: newAddress,
+          birthday: newBirthday,
+          intro: newIntro
+        });
+        
+        // Đóng modal
+        closeModal();
+        
+        // Hiệu ứng thông báo
+        showNotification('Cập nhật thông tin thành công!');
+      });
+      
+      // Kiểm tra nếu có dữ liệu trong localStorage thì load lên
+      const savedData = getFromLocalStorage();
+      if (savedData) {
+        document.querySelector('.main-header h1').textContent = savedData.name;
+        document.querySelector('.subtitle').textContent = savedData.title;
+        document.querySelector('.contact p:nth-child(2)').textContent = `☎️ ${formatPhoneNumber(savedData.phone)}`;
+        document.querySelector('.contact p:nth-child(3)').textContent = `✉️ ${savedData.email}`;
+        document.querySelector('.contact p:nth-child(4)').textContent = `🏠 ${savedData.address}`;
+        document.querySelector('.contact p:nth-child(5)').textContent = `🎂 ${formatDateForDisplay(savedData.birthday)}`;
+        document.querySelector('.profile p').textContent = savedData.intro;
+      }
+      
+      // Hiệu ứng scroll animation
+      const sections = document.querySelectorAll('section');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-section');
+          }
+        });
+      }, {
+        threshold: 0.1
+      });
+
+      sections.forEach(section => {
+        observer.observe(section);
+      });
+
+      // Hiệu ứng hover cho các thẻ công nghệ
+      const techTags = document.querySelectorAll('.tech-tag');
+      techTags.forEach(tag => {
+        tag.addEventListener('mouseover', function() {
+          this.style.transform = 'translateY(-3px)';
+        });
+        tag.addEventListener('mouseout', function() {
+          this.style.transform = 'translateY(0)';
+        });
+      });
+      
+      // Hàm đóng modal
+      function closeModal() {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+      }
+      
+      // Hàm định dạng số điện thoại
+      function formatPhoneNumber(phone) {
+        // Xóa tất cả ký tự không phải số
+        const cleaned = ('' + phone).replace(/\D/g, '');
+        
+        // Định dạng số điện thoại Việt Nam
+        const match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
+        if (match) {
+          return match[1] + '.' + match[2] + '.' + match[3];
+        }
+        
+        return phone;
+      }
+      
+      // Hàm chuyển đổi ngày từ định dạng hiển thị sang input date
+      function formatDateForInput(dateStr) {
+        if (!dateStr) return '';
+        
+        // Chuyển từ dd/mm/yyyy hoặc dd-mm-yyyy sang yyyy-mm-dd
+        const parts = dateStr.split(/[\/-]/);
+        if (parts.length === 3) {
+          return `${parts[2]}-${parts[1].padStart(2, '0')}-${parts[0].padStart(2, '0')}`;
+        }
+        
+        return dateStr;
+      }
+      
+      // Hàm chuyển đổi ngày từ input date sang định dạng hiển thị
+      function formatDateForDisplay(dateStr) {
+        if (!dateStr) return '';
+        
+        // Chuyển từ yyyy-mm-dd sang dd/mm/yyyy
+        const parts = dateStr.split('-');
+        if (parts.length === 3) {
+          return `${parts[2]}/${parts[1]}/${parts[0]}`;
+        }
+        
+        return dateStr;
+      }
+      
+      // Hàm lưu vào localStorage
+      function saveToLocalStorage(data) {
+        localStorage.setItem('cvProfileData', JSON.stringify(data));
+      }
+      
+      // Hàm lấy từ localStorage
+      function getFromLocalStorage() {
+        const data = localStorage.getItem('cvProfileData');
+        return data ? JSON.parse(data) : null;
+      }
+      
+      // Hàm hiển thị thông báo
+      function showNotification(message) {
+        const notification = document.createElement('div');
+        notification.className = 'notification';
+        notification.textContent = message;
+        document.body.appendChild(notification);
+        
+        // Hiệu ứng xuất hiện
+        setTimeout(() => {
+          notification.style.opacity = '1';
+          notification.style.transform = 'translateY(0)';
+        }, 10);
+        
+        // Tự động biến mất sau 3 giây
+        setTimeout(() => {
+          notification.style.opacity = '0';
+          notification.style.transform = 'translateY(-20px)';
+          
+          // Xóa khỏi DOM sau khi animation kết thúc
+          setTimeout(() => {
+            notification.remove();
+          }, 300);
+        }, 3000);
+      }
+    });
+  </script>
+</body>
+</html>

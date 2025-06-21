@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Đặng Minh Quân</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Custom CSS - SỬA ĐƯỜNG DẪN -->
+    <link rel="stylesheet" href="./css/cv-manh.css">
+    <style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Đặng Minh Quân - CV Cá Nhân</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: "Segoe UI", sans-serif;
+      line-height: 1.6;
+      background: #f9f9f9;
+      color: #222;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    header {
+      background-color: #006d5b;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .intro {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 20px;
+      background: white;
+    }
+    .avatar img {
+      width: 160px;
+      border-radius: 10px;
+      margin-right: 20px;
+      transition: transform 0.4s, box-shadow 0.4s;
+    }
+    .avatar img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+    .info {
+      flex: 1;
+    }
+    .contact {
+      list-style: none;
+      margin: 10px 0;
+    }
+    .sothich ul {
+      list-style: disc;
+      padding-left: 20px;
+    }
+    section {
+      padding: 20px;
+      background: white;
+      margin: 10px 0;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+    }
+    section img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 10px;
+      margin: 15px auto;
+      display: block;
+    }
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .grid > div {
+      flex: 1;
+      min-width: 200px;
+      background: #f0f0f0;
+      padding: 12px;
+      border-radius: 10px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .grid > div:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+    footer {
+      background-color: #006d5b;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+      border-top: 2px solid #004d42;
+    }
+    #toggleMode {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #006d5b;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s, transform 0.2s;
+    }
+    #toggleMode:hover {
+      background-color: #004d42;
+      transform: scale(1.05);
+    }
+    body.dark-mode {
+      background-color: #1e1e1e;
+      color: #e0e0e0;
+    }
+    body.dark-mode section,
+    body.dark-mode .grid > div {
+      background-color: #2c2c2c;
+    }
+    body.dark-mode header,
+    body.dark-mode footer {
+      background-color: #111;
+    }
+    body.dark-mode nav a {
+      color: #fff;
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease-out;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @media (max-width: 768px) {
+      .intro {
+        flex-direction: column;
+        align-items: center;
+      }
+      .grid {
+        flex-direction: column;
+      }
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Đặng Minh Quân</h1>
+    <p>Sinh viên CNTT - An Toàn Thông Tin</p>
+    <nav>
+      <ul>
+        <li><a href="#hocvan">Học vấn</a></li>
+        <li><a href="#kynang">Kỹ năng</a></li>
+        <li><a href="#kinhnghiem">Kinh nghiệm</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="intro reveal">
+    <div class="avatar">
+      <img src="Nhom12pro.img/Dang Minh Quan.png" alt="Ảnh đại diện" />
+    </div>
+    <div class="info">
+      <h2>Giới thiệu</h2>
+      <p>Tôi là một lập trình viên trẻ, đam mê bảo mật hệ thống và kiểm thử xâm nhập. Mong muốn được làm việc trong môi trường chuyên nghiệp để phát triển kỹ năng thực tế và đóng góp cho hệ thống an ninh mạng.</p>
+      <ul class="contact">
+        <li>📞 0817419426</li>
+        <li>🎂 04/10/2005</li>
+        <li>📍 Phú Yên</li>
+      </ul>
+      <div class="sothich">
+        <h3>Sở thích</h3>
+        <ul>
+          <li>Chơi cờ</li>
+          <li>Chơi game</li>
+          <li>Đạp xe</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section id="hocvan" class="hocvan reveal">
+    <h2>Học vấn</h2>
+    <img src="Nhom12pro.img/truong.jpeg" alt="Đại học Giao thông Vận tải TP.HCM" />
+    <p>Tôi hiện là sinh viên năm hai tại Trường Đại học Giao thông Vận tải TP.HCM, chuyên ngành Công nghệ Thông tin với định hướng chuyên sâu về An toàn Thông tin.</p>
+  </section>
+  <section id="kynang" class="kynang reveal">
+    <h2>Kỹ năng</h2>
+    <div class="grid">
+      <div>
+        <h3>Ngôn ngữ lập trình</h3>
+        <ul style="list-style: none; padding-left: 0;">
+          <li>C++ ●●●●○</li>
+          <li>Python ●●●●●</li>
+          <li>JavaScript ●●●○○</li>
+          <li>HTML ●●●○○</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Kỹ năng mềm</h3>
+        <ul style="list-style: none; padding-left: 0;">
+          <li>Giải quyết vấn đề</li>
+          <li>Làm việc nhóm</li>
+          <li>Tư duy phản biện</li>
+          <li>Tư duy logic</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Kiến thức ngành</h3>
+        <ul style="list-style: none; padding-left: 0;">
+          <li>Cơ sở dữ liệu</li>
+          <li>Mạng máy tính</li>
+          <li>Hệ điều hành</li>
+          <li>Mã hóa và bảo mật dữ liệu</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section id="kinhnghiem" class="kinhnghiem reveal">
+    <h2>Kinh nghiệm</h2>
+    <img src="Nhom12pro.img/kinhnghiem.png" alt="Kinh nghiệm thực hành" style="width:100%; max-width:300px; border-radius:10px; margin:15px auto; display:block;">
+    <p>Tôi đã thực hiện bài tập lớn sử dụng Clang++ trên Linux, nghiên cứu quy trình biên dịch, kiểm thử hiệu suất và viết chương trình cảnh báo lỗi.</p>
+  </section>
+  <button id="toggleMode">Chuyển nền sáng/tối</button>
+  <footer>
+    <p>&copy; 2024 Đặng Minh Quân</p>
+  </footer>
+  <script>
+    // Cuộn mượt đến các phần khi nhấn menu
+    document.querySelectorAll("a[href^='#']").forEach(anchor => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute("href"));
+        if (target) {
+          target.scrollIntoView({ behavior: "smooth" });
+        }
+      });
+    });
+    // Hiệu ứng hiện dần các phần khi cuộn
+    function revealSections() {
+      const reveals = document.querySelectorAll(".reveal");
+      reveals.forEach(el => {
+        const windowHeight = window.innerHeight;
+        const elementTop = el.getBoundingClientRect().top;
+        if (elementTop < windowHeight - 60) {
+          el.classList.add("active");
+        }
+      });
+    }
+    window.addEventListener("scroll", revealSections);
+    document.addEventListener("DOMContentLoaded", revealSections);
+    // Chuyển nền sáng/tối
+    const toggleModeBtn = document.getElementById("toggleMode");
+    if (toggleModeBtn) {
+      toggleModeBtn.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+      });
+    }
+  </script>
+</body>
+</html>
